@@ -1,0 +1,48 @@
+import turtle
+
+# Set up the screen
+screen = turtle.Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("white")
+
+# Register your image as a shape
+screen.addshape("your_image.gif")  # Replace "your_image.gif" with your image file path
+
+# Create a turtle object
+heart = turtle.Turtle()
+heart.speed(2)
+heart.color("red")
+heart.fillcolor("red")
+
+# Function to draw a heart shape
+def draw_heart():
+    heart.begin_fill()
+    heart.left(140)
+    heart.forward(180)
+    heart.circle(-90, 200)
+    heart.setheading(60)
+    heart.circle(-90, 200)
+    heart.forward(180)
+    heart.end_fill()
+
+# Draw the heart
+draw_heart()
+
+# Hide the turtle
+heart.hideturtle()
+
+# Add text "I LOVE YOU MYLA"
+heart.penup()
+heart.goto(-155, 150)  # Adjust the position as needed
+heart.color("white")
+heart.write("I love you VIC BERNARD", font=("Arial", 20, "bold"))
+
+# Create a turtle for your image
+image_turtle = turtle.Turtle()
+image_turtle.shape("your_image.gif")  # Replace "your_image.gif" with your image file path
+image_turtle.penup()
+image_turtle.goto(0, -200)  # Adjust the position as needed
+image_turtle.showturtle()
+
+# Keep the window open
+screen.mainloop()
